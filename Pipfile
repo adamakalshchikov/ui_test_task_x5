@@ -8,6 +8,7 @@ pylint = "*"
 autopep8 = "*"
 
 [packages]
+selenium = "*"
 
 [requires]
 python_version = "3.7"

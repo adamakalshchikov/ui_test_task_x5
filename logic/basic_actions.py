@@ -27,3 +27,9 @@ class BasicActions(AbstractBasicActions):
 
     def wait_for_element_present(self, by: By, error_message: str) -> WebElement:
         return self.wait_for_element_present(by, error_message, 5)
+
+
+    def wait_for_element_present_and_click(self, by: By, error_message: str) -> WebElement:
+        element: WebElement = self.wait_for_element_present(by, error_message)
+        element.click()
+        return element

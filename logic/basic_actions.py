@@ -18,15 +18,12 @@ class BasicActions(AbstractBasicActions):
     def _init_firefox(self):
         raise NotImplementedError
 
-    def wait_for_element_present(self, by: By, error_message: str, timeout: int) -> WebElement:
+    def wait_for_element_present(self, by: By, error_message: str, timeout: int=5) -> WebElement:
         wait = WebDriverWait(self._driver, timeout)
         return wait.until(
             EC.presence_of_element_located(by),
             message=error_message
         )
-
-    def wait_for_element_present(self, by: By, error_message: str) -> WebElement:
-        return self.wait_for_element_present(by, error_message, 5)
 
 
     def wait_for_element_present_and_click(self, by: By, error_message: str) -> WebElement:
